@@ -1,0 +1,18 @@
+[package]
+name = "stardew_content_bridge"
+version = "0.1.0"                 # можно поднять до "1.6.15" для соответствия игре
+edition = "2021"
+authors = ["ConcernedApe"]        # из метаданных
+license = "proprietary"           # из метаданных
+description = "Bridge between Stardew Valley content files and Rust code"
+
+[dependencies]
+monogame-formats = "0.1"          # чтение XNB (см. crates.io)[reference:0]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = "1"
+walkdir = "2"                     # рекурсивный обход папки Content
+
+[features]
+default = ["xnb"]
+xnb = []                          # можно отключить, если работаете только с JSON
